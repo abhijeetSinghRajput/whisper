@@ -1,6 +1,8 @@
 import { Users } from "lucide-react";
 
 const SidebarSkeleton = () => {
+  // Create 8 skeleton items
+  const skeletonContacts = Array(8).fill(null);
 
   return (
     <aside
@@ -17,7 +19,7 @@ const SidebarSkeleton = () => {
 
       {/* Skeleton Contacts */}
       <div className="overflow-y-auto w-full py-3">
-        {Array(8).fill(null).map((_, idx) => (
+        {skeletonContacts.map((_, idx) => (
           <div key={idx} className="w-full p-3 flex items-center gap-3">
             {/* Avatar skeleton */}
             <div className="relative mx-auto lg:mx-0">

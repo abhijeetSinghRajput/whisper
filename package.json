@@ -1,12 +1,13 @@
 {
-  "name": "whisper",
+  "name": "chat-app",
   "version": "1.0.0",
-  "description": "A MERN stack chat web app",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
     "start": "npm run start --prefix backend"
   },
-  "author": "Abhijeet Singh Rajput",
+  "keywords": [],
+  "author": "",
   "license": "ISC"
 }

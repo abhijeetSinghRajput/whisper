@@ -6,6 +6,7 @@ import { Users } from "lucide-react";
 
 const Sidebar = () => {
   const { getUsers, users, selectedUser, setSelectedUser, isUsersLoading } = useChatStore();
+
   const { onlineUsers } = useAuthStore();
   const [showOnlineOnly, setShowOnlineOnly] = useState(false);
 
@@ -16,6 +17,7 @@ const Sidebar = () => {
   const filteredUsers = showOnlineOnly
     ? users.filter((user) => onlineUsers.includes(user._id))
     : users;
+
   if (isUsersLoading) return <SidebarSkeleton />;
 
   return (
@@ -41,7 +43,7 @@ const Sidebar = () => {
       </div>
 
       <div className="overflow-y-auto w-full py-3">
-        {(Array.isArray(filteredUsers) && filteredUsers.map((user) => (
+        {filteredUsers.map((user) => (
           <button
             key={user._id}
             onClick={() => setSelectedUser(user)}
@@ -73,7 +75,7 @@ const Sidebar = () => {
               </div>
             </div>
           </button>
-        )))}
+        ))}
 
         {filteredUsers.length === 0 && (
           <div className="text-center text-zinc-500 py-4">No online users</div>
