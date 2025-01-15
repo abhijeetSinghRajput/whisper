@@ -12,7 +12,7 @@ export const getUsers = async(req, res)=>{
         res.status(200).json(users);
     } catch (error) {
         res.status(500).json({message: "Internal Server Error"});
-        console.error("Error in geting users");
+        console.error("Error in geting users", error.message);
     }
 } 
 
